@@ -9,7 +9,8 @@ defmodule PhxKafkaConsumer.Application do
   def start(_type, _args) do
     children = [
       PhxKafkaConsumerWeb.Telemetry,
-      {DNSCluster, query: Application.get_env(:phx_kafka_consumer, :dns_cluster_query) || :ignore},
+      {DNSCluster,
+       query: Application.get_env(:phx_kafka_consumer, :dns_cluster_query) || :ignore},
       {Phoenix.PubSub, name: PhxKafkaConsumer.PubSub},
       # Start the Finch HTTP client for sending emails
       {Finch, name: PhxKafkaConsumer.Finch},
