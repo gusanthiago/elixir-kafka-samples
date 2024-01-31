@@ -38,6 +38,7 @@ defmodule PhxKafkaConsumer.KafkaConsumer do
     end
   end
 
+  @impl true
   def handle_message(_, message, _) do
     IO.inspect(message.data, label: "Got message")
     message
