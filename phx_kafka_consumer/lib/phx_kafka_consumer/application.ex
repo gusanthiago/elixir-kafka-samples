@@ -17,7 +17,8 @@ defmodule PhxKafkaConsumer.Application do
       # Start a worker by calling: PhxKafkaConsumer.Worker.start_link(arg)
       # {PhxKafkaConsumer.Worker, arg},
       # Start to serve requests, typically the last entry
-      PhxKafkaConsumerWeb.Endpoint
+      PhxKafkaConsumerWeb.Endpoint,
+      PhxKafkaConsumer.KafkaConsumer
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html

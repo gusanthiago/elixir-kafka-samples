@@ -25,7 +25,3 @@ services:
     depends_on:
         - zookeeper
     command: sh -c "((sleep 15 && kafka-topics --create --zookeeper zookeeper:2181 --replication-factor 1 --partitions 1 --topic "consumer.test-topic")&) && /etc/confluent/docker/run "
-
-volumes:
-  database-data:
-    driver: local

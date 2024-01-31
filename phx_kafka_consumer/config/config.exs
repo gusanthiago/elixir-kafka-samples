@@ -39,7 +39,7 @@ config :logger, :console,
 config :phoenix, :json_library, Jason
 
 # Kafka Config
-config :kafka_consumer, :kafka_broker,
+config :phx_kafka_consumer, :kafka_broker,
   kafka_host: "localhost:9092",
   topic: ["consumer.test-topic"],
   group_name: "group_test",
