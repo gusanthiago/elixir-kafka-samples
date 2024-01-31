@@ -10,18 +10,20 @@ This repository contains some samples of Kafka integrations using Elixir and Erl
 
 You can see instructions to use each sample
 
-### ErlangConsumer
+## ErlangConsumer
 
-<!-- todo -->
+```
+todo
+```
 
-### PhxKafkaConsumer
+## PhxKafkaConsumer
 
-#### Requirements
+### Requirements
 
 * Docker and docker-compose
 * Elixir 
 
-#### Start consumer
+### Using consumer
 
 Enter inside `phx_kafka_consumer` to start the setup
 
@@ -37,7 +39,6 @@ Enter inside `phx_kafka_consumer` to start the setup
 
   * Run `mix setup` to install and setup dependencies
   * Start Phoenix endpoint with `mix phx.server` or inside IEx with `iex -S mix phx.server`
-
 
 Below you can see the consumer works
 
