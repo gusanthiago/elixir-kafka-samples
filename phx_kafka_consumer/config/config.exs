@@ -43,7 +43,6 @@ config :phx_kafka_consumer, :kafka_broker,
   kafka_host: "localhost:9092",
   topic: ["consumer.test-topic"],
   group_name: "group_test",
-  enabled: System.get_env("KAFKA_CONSUMER_ENABLED", "true") |> String.to_atom(),
   client_config: [],
   concurrency: System.get_env("KAFKA_CONCURRENCY", "1") |> String.to_integer(),
   consumer_batcher: [

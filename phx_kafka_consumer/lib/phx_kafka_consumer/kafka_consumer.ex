@@ -10,32 +10,26 @@ defmodule PhxKafkaConsumer.KafkaConsumer do
         :kafka_broker
       )
 
-    case config[:enabled] do
-      true ->
-        Logger.info("Starting kafka consumer")
+    Logger.info("Start kafka consumer")
 
-        Broadway.start_link(__MODULE__,
-          name: __MODULE__,
-          producer: [
-            module:
-              {BroadwayKafka.Producer,
-               hosts: config[:kafka_host],
-               group_id: config[:group_name],
-               topics: config[:topic],
-               client_config: config[:client_config]}
-          ],
-          processors: [
-            default: [concurrency: config[:concurrency]]
-          ],
-          batchers: [
-            default: config[:consumer_batcher]
-          ]
-        )
+    Broadway.start_link(__MODULE__,
+      name: __MODULE__,
+      producer: [
+        module:
+          {BroadwayKafka.Producer,
+            hosts: config[:kafka_host],
+            group_id: config[:group_name],
+            topics: config[:topic],
+            client_config: config[:client_config]}
+      ],
+      processors: [
+        default: [concurrency: config[:concurrency]]
+      ],
+      batchers: [
+        default: config[:consumer_batcher]
+      ]
+    )
 
-      false ->
-        Logger.info("#{__MODULE__} will not be initialized because it's disabled.")
-        :ignore
-    end
   end
 
   @impl true
