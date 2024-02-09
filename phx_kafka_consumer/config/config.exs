@@ -40,6 +40,7 @@ config :phoenix, :json_library, Jason
 
 # Kafka Config
 config :phx_kafka_consumer, :kafka_broker,
+  producer_module: BroadwayKafka.Producer,
   kafka_host: "localhost:9092",
   topic: ["consumer.test-topic"],
   group_name: "group_test",

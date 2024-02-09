@@ -16,11 +16,11 @@ defmodule PhxKafkaConsumer.KafkaConsumer do
       name: __MODULE__,
       producer: [
         module:
-          {BroadwayKafka.Producer,
-            hosts: config[:kafka_host],
-            group_id: config[:group_name],
-            topics: config[:topic],
-            client_config: config[:client_config]}
+          {config[:producer_module],
+           hosts: config[:kafka_host],
+           group_id: config[:group_name],
+           topics: config[:topic],
+           client_config: config[:client_config]}
       ],
       processors: [
         default: [concurrency: config[:concurrency]]
@@ -29,7 +29,6 @@ defmodule PhxKafkaConsumer.KafkaConsumer do
         default: config[:consumer_batcher]
       ]
     )
-
   end
 
   @impl true

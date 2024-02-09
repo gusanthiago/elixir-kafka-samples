@@ -43,3 +43,10 @@ Enter inside `phx_kafka_consumer` to start the setup
 Below you can see the consumer works
 
 ![Using kafka consumer with phoenix](./phx_kafka_consumer/phx_kafka_consumer.gif)
+
+
+#### Running tests
+
+```
+mix test
+```

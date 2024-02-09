@@ -18,3 +18,6 @@ config :logger, level: :warning
 
 # Initialize plugs at runtime for faster test compilation
 config :phoenix, :plug_init_mode, :runtime
+
+config :phx_kafka_consumer, :kafka_broker,
+  producer_module: Broadway.DummyProducer
