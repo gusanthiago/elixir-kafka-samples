@@ -1,1 +1,9 @@
-# erlang_kafka_consumer
+consumerKafka
+=====
+
+An OTP application
+
+Build
+-----
+
+    $ rebar3 compile

@@ -1,0 +1,6 @@
+-sname consumerKafka
+
+-setcookie consumerKafka_cookie
+
++K true
++A30
